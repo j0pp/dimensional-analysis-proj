@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My first Vue app</title>
+  <script src="https://unpkg.com/vue"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-beta/dist/katex.min.css" integrity="sha384-9tPv11A+glH/on/wEu99NVwDPwkMQESOocs/ZGXPoIiLE8MU/qkqUcZ3zzL+6DuH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.10.0-beta/dist/katex.min.js" integrity="sha384-U8Vrjwb8fuHMt6ewaCy8uqeUXv4oitYACKdB0VziCerzt011iQ/0TqlSlv8MReCm" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="app-3">
+        <input id="input1" @keypress.enter="go" placeholder="edit">
+        <p> {{ typed }} </p>
+        <div v-bind:id="dynamicId">d</div>
+    </div>
+
+    
+
+  <script>
+
+    // katex.render("c = \\pm\\sqrt{a^2 + b^2}", element);
+
+    var app3 = new Vue({
+        el: '#app-3',
+        data: {
+            typed: 'asd'
+        },
+        methods: {
+            go: function(event) {
+                // typed = event
+                katex.render("c = \\pm\\sqrt{a^2 + b^2}", dynamicId);
+            }
+        }
+    })
+  </script>
+</body>
+</html>
